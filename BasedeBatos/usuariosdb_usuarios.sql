@@ -1,0 +1,55 @@
+-- MySQL dump 10.13  Distrib 8.0.40, for Win64 (x86_64)
+--
+-- Host: localhost    Database: usuariosdb
+-- ------------------------------------------------------
+-- Server version	8.0.40
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!50503 SET NAMES utf8 */;
+/*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
+/*!40103 SET TIME_ZONE='+00:00' */;
+/*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
+/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
+/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
+/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
+
+--
+-- Table structure for table `usuarios`
+--
+
+DROP TABLE IF EXISTS `usuarios`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `usuarios` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `username` varchar(50) NOT NULL,
+  `password` varchar(255) NOT NULL,
+  `role` varchar(50) DEFAULT 'user',
+  `email` varchar(100) DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `email` (`email`)
+) ENGINE=InnoDB AUTO_INCREMENT=29 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `usuarios`
+--
+
+LOCK TABLES `usuarios` WRITE;
+/*!40000 ALTER TABLE `usuarios` DISABLE KEYS */;
+INSERT INTO `usuarios` VALUES (15,'raz','scrypt:32768:8:1$H1JP4VgMOTjCZZTs$890e281222b4ada932ce7c67e4bdc50d9c2cac7ee0b356996dca2a78f37a1cdc447f09eb121ec5713889387ba540dc287aaf24ee517942c4c5083173680a116a','admin','raza_117@outlook.com'),(16,'rafa','scrypt:32768:8:1$Vfp7LIAhyd8hxxAw$e7d747ee55a25403c8519c5fd43d9ec8375a5478498b2a63b305436811b469d6c0f155cc1c4dfd19859b39dcd33be9bf5f757608937515af3ce74b2be7d5705c','admin','rafa@outlook.com'),(17,'cris','scrypt:32768:8:1$rBQM7NhaesAF3wvi$65e368280df8d1ab2001f53dc98608b6dabadf00dd4c62d451a85c70b33530ac1004688a3b39fd270f0e0cbd6f336ce98b98413dda213d104b32cf3331806190','user','crist@outlook.com'),(18,'lola','scrypt:32768:8:1$7tzbOhvBDU075kdK$e2807e63613b64ebc3953a7bc63c636ac4d427e950ba30c2f4c092f5bad4c951d88b1e7eff067155f12011fd874286ac50873f5b3fa0d528f0a551cee4167026','user','random1@example.com'),(22,'raziel','scrypt:32768:8:1$CUaxQutnpsWCg386$e5639bbcf58eec7c2eaf458a0f858369c8b36937a442b031aa57617566a4edb33d859a4f7b1751c2191a85e47b7bd83f8229c6c40d6cedd3bee7db9f446f5af7','admin','raz_117@outlook.com'),(23,'ale','pbkdf2:sha256:260000$suWzZcv2y43TeC8C$62236d6095892caa466a09107b5f53b16a113da070e552d335301a1da4bd23c7','user','ale@outlook.com'),(24,'fany','scrypt:32768:8:1$Zhpl4JshnomI9CNs$12c22b2a31a85fe50a4233339db85b037264c96ac1b5c2f0b0bb7134ce2fe3b2a9060959f088e147e6cdca5e58f13232c6717c29178f162564dc475ecc553e2d','admin','fany@utlook.com'),(25,'stich','scrypt:32768:8:1$99xIdu0w8Zfc4OuW$59352fa24f8f0ad7646053213c332e7a77e92ec2f3054caa911fe6d77b16e542a697660f199466c1e6c7375ffe408fdd79cfcfe85c924d9bf900e68306f98655','user','loco@gmail.com'),(26,'lalo','scrypt:32768:8:1$vUmN5sFf9HDYAS4S$c15ccef911b0fad8361983824b3c5f9005058940cc8dcdbbd15439c5110b29e91df0a6da931f1fbcf7803468ff0f4b75d3f8c6605e146e3ea61689534caf3974','user',NULL),(27,'Prueba','scrypt:32768:8:1$g7qBrDOK4MCKZDlP$ed04e437cb63f4ba72041cadf3b37b09d7842258cd3aa29123e94795994d8fb76d12c4368b218a774e59f666cc6c629dd8820348bb9134bb897d2df4ecfccf34','user',NULL),(28,'blue','scrypt:32768:8:1$vQ5LSFGsSnD15Go3$2f8da742442ac26262e45a07e8c81ecff09f618fea1c17f0e8c96327e20251c704223d5e07dc523a8c980a0532f2e964d7673e016898649bdcdc5759f0a9a065','user','blue@outlook.com');
+/*!40000 ALTER TABLE `usuarios` ENABLE KEYS */;
+UNLOCK TABLES;
+/*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
+
+/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
+/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
+/*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
+
+-- Dump completed on 2025-05-09 16:05:40
