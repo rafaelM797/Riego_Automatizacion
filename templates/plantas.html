@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf8mb4">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plantas</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+</head>
+<body>
+    <div class="dashboard-container">
+
+        <nav class="top-navbar">
+            <div class="navbar-brand">Control de Cultivos</div>
+            <ul class="navbar-nav">
+                <li class="nav-item"><a href="/dashboard" class="nav-link"><i class="bi bi-house"></i> Inicio</a></li>
+                <li class="nav-item"><a href="/plantas" class="nav-link"><i class="bi bi-flower2"></i> Plantas</a></li>
+                <li class="nav-item"><a href="/servicios" class="nav-link"><i class="bi bi-tools"></i> Servicios</a></li>
+                <li class="nav-item"><a href="/noticias" class="nav-link"><i class="bi bi-newspaper"></i> Noticias</a></li>
+                <li class="nav-item"><a href="/soporte" class="nav-link"><i class="bi bi-headset"></i> Soporte</a></li>
+                <li class="nav-item"><a href="/admin/dashboard" class="nav-link"><i class="bi bi-person"></i> Admin</a></li>
+            </ul>
+        </nav>
+
+        <main class="main-content">
+            <section class="welcome-section">
+                <h1>Plantas</h1>
+                <p>Información sobre las plantas.</p>
+            </section>
+
+            <section class="data-section">
+                </section>
+        </main>
+    </div>
+</body>
+</html>

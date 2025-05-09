@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Gestión de Usuarios</title>
+    </head>
+<body>
+    <h1>Lista de Usuarios</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Usuario</th>
+                <th>Email</th>
+                <th>Rol</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for user in users %}  <tr>
+                    <td>{{ user[0] }}</td>  <td>{{ user[1] }}</td>  <td>{{ user[2] }}</td>  <td>{{ user[3] }}</td>  <td>
+                        <button>Editar</button>
+                        <button>Eliminar</button>
+                    </td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <a href="/admin/dashboard">Volver al Dashboard</a>
+</body>
+</html>

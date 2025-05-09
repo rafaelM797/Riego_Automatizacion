@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf8mb4">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panel de Control</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+</head>
+<body>
+    <div class="dashboard-container">
+
+        <nav class="top-navbar">
+            <div class="navbar-brand">Control de Cultivos</div>
+            <ul class="navbar-nav">
+                <li class="nav-item"><a href="/dashboard" class="nav-link"><i class="bi bi-house"></i> Inicio</a></li>
+                <li class="nav-item"><a href="/plantas" class="nav-link"><i class="bi bi-flower2"></i> Plantas</a></li>
+                {% if session.admin_logged_in %}  <li class="nav-item">
+                <a href="/admin/users" class="nav-link"><i class="bi bi-person-gear"></i> Gestión Usuarios</a>
+            </li>
+        {% endif %}
+                <li class="nav-item"><a href="/servicios" class="nav-link"><i class="bi bi-tools"></i> Servicios</a></li>
+                <li class="nav-item"><a href="/noticias" class="nav-link"><i class="bi bi-newspaper"></i> Noticias</a></li>
+                <li class="nav-item"><a href="/soporte" class="nav-link"><i class="bi bi-headset"></i> Soporte</a></li>
+                <li class="nav-item"><a href="/admin/dashboard" class="nav-link"><i class="bi bi-person"></i> Admin</a></li>
+            </ul>
+        </nav>
+
+        <main class="main-content">
+            <section class="welcome-section">
+                <h1>Bienvenido, {{ username }}</h1>
+                <p>Aquí tienes un resumen de la información importante.</p>
+            </section>
+
+            <section class="data-section">
+                <div class="chart-container">
+                    <div class="bar-chart">
+                        <h2>Datos de Cultivo</h2>
+                        <canvas id="barChart"></canvas> 
+                    </div>
+                    <div class="pie-chart">
+                        <h2>Estado del Suelo</h2>
+                        <canvas id="pieChart"></canvas> 
+                    </div>
+                </div>
+            </section>
+            <section class="other-info">
+                </section>
+        </main>
+    </div>
+
+    <script>
+        // Obtener los datos de Flask
+        const barData = {{ bar_data|tojson|safe }};
+        const pieData = {{ pie_data|tojson|safe }};
+
+        // Gráfica de Barras
+        const barCtx = document.getElementById('barChart').getContext('2d');
+        new Chart(barCtx, {
+            type: 'bar',
+            data: {
+                labels: barData.map(item => item.name),
+                datasets: [{
+                    label: 'Valores',
+                    data: barData.map(item => item.value),
+                    backgroundColor: ['rgba(255, 99, 132, 0.2)', 'rgba(54, 162, 235, 0.2)', 'rgba(255, 206, 86, 0.2)'],
+                    borderColor: ['rgba(255, 99, 132, 1)', 'rgba(54, 162, 235, 1)', 'rgba(255, 206, 86, 1)'],
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+
+        // Gráfica de Pastel
+        const pieCtx = document.getElementById('pieChart').getContext('2d');
+        new Chart(pieCtx, {
+            type: 'pie',
+            data: {
+                labels: pieData.map(item => item.name),
+                datasets: [{
+                    label: 'Porcentaje',
+                    data: pieData.map(item => item.value),
+                    backgroundColor: ['rgba(0, 128, 0, 0.5)', 'rgba(255, 99, 132, 0.5)'],
+                    borderColor: ['rgba(0, 128, 0, 1)', 'rgba(255, 99, 132, 1)'],
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+            }
+        });
+    </script>
+
+</body>
+</html>

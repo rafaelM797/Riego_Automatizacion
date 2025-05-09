@@ -1,0 +1,39 @@
+.formulario {
+    gap: 30px;
+    margin-top: 30px;
+    background-color: rgba(0, 0, 0, 0.719);
+    border-radius: 3rem;
+    padding: 3rem;
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease, box-shadow 0.3s ease;
+    
+  }
+  .frosted-glass {
+    background-color: rgba(0, 0, 0, 0.61); /* oscuro translúcido */
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px); /* para Safari */
+    border-radius: 1rem;
+    color: white;
+  }
+  
+  .formulario:hover {
+    transform: scale(1.02);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  }
+  /*boton*/
+  .custom-button {
+    padding: 0.10rem 2rem;
+    background-color: #f0f0f0;
+    color: rgb(255, 255, 255);
+    border-radius: 0.7rem;
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.1s ease, box-shadow 0.3s ease;
+    
+  }
+  .custom-button:hover {
+  
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.6);  /* Sombra más grande y difusa */
+    transform: translateY(-3px);  /* Mueve el botón hacia arriba ligeramente */
+  
+  }
+ 

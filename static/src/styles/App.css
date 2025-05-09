@@ -1,0 +1,286 @@
+/* Estilos para la barra de navegación superior */
+.top-navbar {
+  background-color: #051f20;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.navbar-brand {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.navbar-nav {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+  gap: 1.5rem;
+}
+
+.nav-item {
+  margin-right: 0; /* Eliminado para manejar el espaciado con gap en .navbar-nav */
+}
+
+.nav-link {
+  color: white;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: color 0.3s ease;
+  border: none;
+  background: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+.nav-link:hover {
+  color: #84db8d; /* Verde claro al pasar el ratón */
+}
+
+/* Estilos para el contenido principal */
+.main-content {
+  padding: 2rem;
+  background-color: rgba(0, 0, 0, 0.6); /* Fondo semitransparente */
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  color: white;
+  margin-top: 2rem;
+}
+
+.welcome-section {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.data-section {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  gap: 2rem;
+}
+
+.chart-container {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.chart {
+  background-color: rgba(255, 255, 255, 0.8);
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 10px;
+  text-align: center;
+  color: #333;
+  width: 45%; /* Ajusta según sea necesario */
+  min-width: 300px;
+}
+
+body {
+  font-family: 'Arial Black', sans-serif;
+  /*background-image: url(./img/img5.gif);*/
+  background-image: url('./img/img6.jpeg');
+  background-color: #f0f0f0; /* Fondo claro para mejor visibilidad */
+  color: #333; /* Texto oscuro */
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;   /* Centra horizontalmente */
+  align-items: center;       /* Centra verticalmente */
+  min-height: 100vh;         /* Ocupa toda la altura de la pantalla */
+  box-sizing: border-box;
+}
+formulario::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.6); /* Opacidad */
+  z-index: 0;
+}
+
+h1 {
+  color: #007bff;
+  text-align: center;
+}
+
+p {
+  text-align: center;
+  color: #333;
+}
+
+.contenido {
+  display: flexbox;
+  padding: 0.1rem 2rem;
+  background-color: #051f20;
+  color: rgb(250, 243, 243);
+  border-radius: 2.7rem;
+  transition: background-color 0.3s ease;
+  text-align: center;
+  color: white;  /* Asegura que el texto sea visible sobre el fondo */
+  padding: px;
+}
+/*sub menu*/
+.card {
+  gap: 50px;
+  margin-top: 30px;
+  background-color: rgba(0, 0, 0, 0.315);
+  border-radius: 3rem;
+  padding: 3rem;
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: scale(1.02);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+/*boton*/
+.custom-button {
+  padding: 0.10rem 2rem;
+  background-color: #124f52;
+  color: rgb(255, 255, 255);
+  border-radius: 0.7rem;
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.1s ease, box-shadow 0.3s ease;
+  
+}
+.custom-button:hover {
+
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.6);  /* Sombra más grande y difusa */
+  transform: translateY(-3px);  /* Mueve el botón hacia arriba ligeramente */
+
+}
+
+.alert {
+  background-color: #000000;
+  color: #000000;
+  padding: 10px;
+  margin: 5px 0;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+}
+
+.chart-container {
+  margin-top: 15px;
+  background-color: #2bff00;
+  border-radius: 12px;
+  padding: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.096);
+}
+
+@media (max-width: 768px) {
+  .card {
+    margin: 8px;
+  }
+
+  .button {
+    width: 100%;
+    margin: 5px 0;
+  }
+
+  h1 {
+    font-size: 24px;
+  }
+}
+/*fondo2*/
+.main-container {
+  border-radius: 2.7rem;
+  padding: 1.5rem;
+  background-color: rgba(255, 255, 255, 0.9); /* Fondo blanco semitransparente */
+  min-height: 100vh;
+  width: 100%; /* 👈 Asegura que ocupe todo el ancho */
+  box-sizing: border-box; /* 👈 Evita que el padding cause overflow */
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  text-align: center;
+}
+.main-title {
+  text-align: center;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* responsive */
+  gap: 1rem;
+  width: 100%; /* 👈 Que ocupe todo */
+  max-width: 1200px; /* opcional para limitar en pantallas grandes */
+  margin: 0 auto; /* 👈 Esto lo centra */
+}
+.button-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  justify-content: center; /* Centra los botones */
+}
+.btn-green-light {
+  background-color: #84db8d;
+  color: white;
+}
+
+.btn-green-medium {
+  background-color: #1ea767; /* Bootstrap Success */
+  color: white;
+}
+
+.btn-green-dark {
+  background-color: #196338;
+  color: white;
+}
+.btn-green-strong {
+  background-color: #1b8d47; /* Verde fuerte */
+  color: white;
+}
+/* Estilo personalizado para el botón */
+.btn-volver {
+  background-color: #257c39; /* Color verde */
+  color: white;
+  border: none;
+  padding: 10px 40px;
+  font-size: 1rem;
+  font-weight: bold;
+  border-radius: 50px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  margin-top: 50px; /* <<< AQUÍ agregamos separación hacia abajo */
+}
+
+.btn-volver:hover {
+  background-color: #32a755; /* Color verde más oscuro */
+  transform: scale(1.05); /* Efecto de escala */
+}
+
+.btn-volver:focus {
+  outline: none;
+  box-shadow: 0 0 10px rgba(135, 248, 29, 0.5);
+}
+.btn-outline-light {
+  border-radius: 30px;
+  padding: 0.5rem 1.25rem;
+  font-weight: 500;
+  transition: 0.3s ease;
+}
+
+.btn-outline-light:hover {
+  background-color: rgba(18, 61, 10, 0.76);
+  color: #f0f2f3;
+}
+
+
+
+

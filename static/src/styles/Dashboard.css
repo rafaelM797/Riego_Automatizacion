@@ -1,0 +1,41 @@
+.main-nav {
+    background-color: rgba(0, 0, 0, 0.8); /* Fondo oscuro semitransparente */
+    padding: 15px 0;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    margin-bottom: 40px;
+}
+
+.main-nav ul {
+    list-style: none; /* Quitar viñetas */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    margin: 0;
+    gap: 20px; /* Espacio entre los elementos */
+}
+
+.main-nav li {
+    margin: 0;
+    padding: 0;
+}
+
+.main-nav a {
+    color: white;
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.main-nav a:hover {
+    background-color: #0056b3; /* Color azul al pasar el mouse */
+}
+
+.main-nav i {
+    font-size: 1.2em; /* Tamaño de los íconos */
+}
